@@ -15,7 +15,7 @@ module DevoluteCodeChallenge
         config.auto_register = %w[lib/devolute_code_challenge/main]
       end
 
-      load_paths! "lib"
+      load_paths! "lib", "system"
     end
   end
 end

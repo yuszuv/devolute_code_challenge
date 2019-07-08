@@ -9,7 +9,7 @@ module DevoluteCodeChallenge
       config.name = :devolute_code_challenge
       config.listeners = true
       config.default_namespace = "devolute_code_challenge"
-      config.auto_register = %w[lib/devolute_code_challenge]
+      config.auto_register = %w[lib/devolute_code_challenge lib/authentication]
     end
 
     load_paths! "lib"
