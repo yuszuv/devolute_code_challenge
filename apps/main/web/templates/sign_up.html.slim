@@ -1,0 +1,16 @@
+- flash.each do |key, value|
+  div class=key == value
+
+form action="/sign_up" method="post"
+  == csrf_tag
+
+  label for="username" Username
+  input type="text" name="username" id="username"
+
+  label for="password" Password
+  input type="password" name="password" id="password"
+
+  label for="password_confirmation" Password confirmation
+  input type="password" name="password_confirmation" id="password_confirmation"
+
+  button Sign Up
