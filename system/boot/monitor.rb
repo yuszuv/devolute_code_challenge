@@ -5,6 +5,6 @@ DevoluteCodeChallenge::Container.boot :monitor do
   end
 
   start do
-    Dry::Monitor::SQL::Logger.new(logger).subscribe(notifications)
+    # Dry::Monitor::SQL::Logger.new(logger).subscribe(notifications)
   end
 end
