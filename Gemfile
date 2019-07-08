@@ -13,16 +13,15 @@ gem "rack", ">= 2.0"
 
 # Database persistence
 gem "pg"
-gem "rom", "~> 4.0"
-gem "rom-sql", "~> 2.1"
+gem "rom"
+gem "rom-sql"
 
 # Application dependencies
-gem "dry-matcher", "~> 0.7"
-gem "dry-monads", "~> 1.2"
-gem "dry-struct", "~> 0.3"
-gem "dry-transaction", "~> 0.13"
-gem "dry-types", "~> 0.12"
-gem "dry-validation", "~> 0.11"
+gem "dry-matcher"
+gem "dry-monads"
+gem "dry-struct"
+gem "dry-types"
+gem "dry-validation"
 gem "dry-view", "~> 0.7"
 gem "slim"
 
