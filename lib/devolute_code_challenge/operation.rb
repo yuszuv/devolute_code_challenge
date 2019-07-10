@@ -2,6 +2,8 @@
 
 require 'dry/monads/result'
 require 'dry/monads/do/all'
+require 'dry/matcher'
+require 'dry/matcher/either_matcher'
 
 module DevoluteCodeChallenge
   class Operation
