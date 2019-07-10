@@ -5,6 +5,10 @@ module DevoluteCodeChallenge
     module Repositories
       class User < Repository[:users]
         commands :create
+
+        def by_username(username)
+          users.by_username(username).one!
+        end
       end
     end
   end
