@@ -28,6 +28,8 @@ module DevoluteCodeChallenge
 
         def validate(input)
           val = Class.new(Dry::Validation::Contract) do
+            option :repo
+
             params do
               required(:username).filled(:string)
               required(:password).filled(:string)
@@ -37,7 +39,12 @@ module DevoluteCodeChallenge
             rule(:password, :password_confirmation) do
               key.failure('and password confirmation are not the same') if values[:password] != values[:password_confirmation]
             end
-          end.new.(input)
+
+            rule(:username) do
+              key.failure('Username already taken') if repo.exists?(value)
+            end
+
+          end.new(repo: repo).(input)
 
           val.success? ? Success(val.to_h) : Failure(val)
         end
