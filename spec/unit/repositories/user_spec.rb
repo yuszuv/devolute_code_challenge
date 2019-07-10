@@ -18,4 +18,25 @@ RSpec.describe DevoluteCodeChallenge::Main::Repositories::User do
     expect(res.encrypted_password).to eq encrypted_password
   end
 
+  context "with a user persisted" do
+
+    let(:username){ 'john.doe' }
+
+    before(:each) do
+      Factory[:user, username: username]
+    end
+
+    describe "checking for existence" do
+
+      it "returns true for an existing username" do
+        expect(repo.exists?(username)).to be true
+      end
+
+      it "returns false a non-existsing username" do
+        expect(repo.exists?("hans.wurst")).to be false
+      end
+    end
+
+  end
+
 end
